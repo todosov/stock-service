@@ -1,4 +1,4 @@
-package com.oleksii.stockservice.domain;
+package com.otodosov.stockservice.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

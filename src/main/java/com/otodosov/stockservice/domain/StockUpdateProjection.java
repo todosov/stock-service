@@ -1,4 +1,4 @@
-package com.oleksii.stockservice.domain;
+package com.otodosov.stockservice.domain;
 
 import org.springframework.data.rest.core.config.Projection;
 

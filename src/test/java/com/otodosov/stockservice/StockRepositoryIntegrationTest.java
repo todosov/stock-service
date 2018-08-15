@@ -1,7 +1,7 @@
-package com.oleksii.stockservice;
+package com.otodosov.stockservice;
 
-import com.oleksii.stockservice.domain.Stock;
-import com.oleksii.stockservice.repository.StockRepository;
+import com.otodosov.stockservice.domain.Stock;
+import com.otodosov.stockservice.repository.StockRepository;
 import org.assertj.core.util.IterableUtil;
 import org.junit.Before;
 import org.junit.Ignore;

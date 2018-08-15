@@ -1,6 +1,6 @@
-package com.oleksii.stockservice.repository;
+package com.otodosov.stockservice.repository;
 
-import com.oleksii.stockservice.domain.Stock;
+import com.otodosov.stockservice.domain.Stock;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.stereotype.Repository;
 
