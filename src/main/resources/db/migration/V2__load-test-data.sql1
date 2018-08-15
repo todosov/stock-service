@@ -1,13 +1,13 @@
 -- just load some initial data to see example
 -- dont do it in production
--- insert into stock (name, current_price, last_update)
--- VALUES ('stock-1', 121.1, now()),
---   ('stock-2', 131.1, now()),
---   ('stock-3', 50, now()),
---   ('stock-4', 4472.5, now()),
---   ('stock-5', 3215, now()),
---   ('stock-6', 4472.5, now()),
---   ('stock-7', 12.35, now()),
---   ('stock-8', 100, now()),
---   ('stock-9', 4472.5, now()),
---   ('stock-10', 10.1, now());
+insert into stock (name, current_price, last_update)
+VALUES ('stock-1', 121.1, now()),
+  ('stock-2', 131.1, now()),
+  ('stock-3', 50, now()),
+  ('stock-4', 4472.5, now()),
+  ('stock-5', 3215, now()),
+  ('stock-6', 4472.5, now()),
+  ('stock-7', 12.35, now()),
+  ('stock-8', 100, now()),
+  ('stock-9', 4472.5, now()),
+  ('stock-10', 10.1, now());
