@@ -1,0 +1,23 @@
+version: '3'
+
+services:
+
+  stock-service:
+    image: otodosov/stock-service:1876d7e9
+    container_name: stock-service
+    ports:
+      - 8080:8080
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/postgres?currentSchema\=public
+      - DB_USERNAME=postgres
+      - DB_PASSWORD=1111
+    depends_on:
+      - db
+
+  db:
+    image: postgres:10.5
+    container_name: postgres_db
+    ports:
+      - 5432:5432
+    environment:
+      - POSTGRES_PASSWORD=1111

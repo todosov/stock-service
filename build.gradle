@@ -1,22 +1,20 @@
-import com.bmuschko.gradle.docker.DockerRegistryCredentials
-
 buildscript {
-	ext {
-		springBootVersion = '2.0.4.RELEASE'
+    ext {
+        springBootVersion = '2.0.4.RELEASE'
         dockerPluginVersion = '3.6.0'
         nodePluginVersion = '1.2.0'
-	}
-	repositories {
-		jcenter()
+    }
+    repositories {
+        jcenter()
         maven {
             url "https://plugins.gradle.org/m2/"
         }
-	}
-	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
-		classpath("com.bmuschko:gradle-docker-plugin:${dockerPluginVersion}")
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+        classpath("com.bmuschko:gradle-docker-plugin:${dockerPluginVersion}")
         classpath("com.moowork.gradle:gradle-node-plugin:${nodePluginVersion}")
-	}
+    }
 }
 
 apply plugin: 'java'
@@ -37,19 +35,23 @@ repositories {
     jcenter()
 }
 
-dependencies {
-    compile('org.springframework.boot:spring-boot-starter-data-jpa')
-    compile('org.postgresql:postgresql')
-    compile('org.flywaydb:flyway-core:5.1.4')
-
-    compile('org.springframework.boot:spring-boot-starter-data-rest')
-
-    compileOnly('org.projectlombok:lombok:1.18.2')
-
-    testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile('com.h2database:h2')
+ext {
+    flywayVersion = '5.1.4'
+    lombokVersion = '1.18.2'
 }
 
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-data-jpa")
+    compile("org.postgresql:postgresql")
+    compile("org.flywaydb:flyway-core:${flywayVersion}")
+
+    compile("org.springframework.boot:spring-boot-starter-data-rest")
+
+    compileOnly("org.projectlombok:lombok:${lombokVersion}")
+
+    testCompile("org.springframework.boot:spring-boot-starter-test")
+    testCompile("com.h2database:h2")
+}
 
 //configure docker plugin
 docker {
@@ -60,8 +62,9 @@ docker {
     }
 }
 
+import com.bmuschko.gradle.docker.DockerRegistryCredentials
+
 def credentials = new DockerRegistryCredentials()
-//credentials.url = "https://otodosov.public"
 credentials.username = "${System.env.DOCKER_USER}"
 credentials.password = "${System.env.DOCKER_PASS}"
 
