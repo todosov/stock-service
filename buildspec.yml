@@ -1,0 +1,19 @@
+version: 0.2
+
+env:
+  variables:
+    JAVA_HOME: "/usr/lib/jvm/java-8-openjdk-amd64"
+  parameter-store:
+    DOCKER_USER: "dockerUser"
+    DOCKER_PASS: "dockerPass"
+
+phases:
+  pre_build:
+    commands:
+      - chmod +x gradlew
+      - export HASH_VERSION="$(echo $CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c1-8)"
+  build:
+    commands:
+      - ./gradlew npmRunBuild build dockerPushImage
+    finally:
+      - echo This always runs even if the install command fails
