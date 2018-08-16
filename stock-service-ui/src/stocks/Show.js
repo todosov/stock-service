@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Moment from "moment/moment";
 
 class Show extends Component {
 
@@ -51,7 +52,7 @@ class Show extends Component {
                             <dt>Current Price:</dt>
                             <dd>{stock.currentPrice}</dd>
                             <dt>Last Update:</dt>
-                            <dd>{stock.lastUpdate}</dd>
+                            <td>{Moment(stock.lastUpdate).format('DD-MMM-YYYY')}</td>
                         </dl>
                         <Link to={{ pathname: '/edit', state: {link: link} }} class="btn btn-success">Edit</Link>&nbsp;
                         <button onClick={this.delete.bind(this, this.state.link)} class="btn btn-danger">Delete</button>

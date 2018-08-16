@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import Moment from 'moment';
 
 class App extends Component {
 
@@ -41,6 +42,7 @@ class App extends Component {
                             <tr>
                                 <th>Name</th>
                                 <th>Current Price</th>
+                                <th>Last Update</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -48,6 +50,7 @@ class App extends Component {
                                 <tr>
                                     <td><Link to={{ pathname: '/show', state: {link: stock._links.self.href} }}>{stock.name}</Link></td>
                                     <td>{stock.currentPrice}</td>
+                                    <td>{Moment(stock.lastUpdate).format('DD-MMM-YYYY')}</td>
                                 </tr>
                             )}
                             </tbody>
