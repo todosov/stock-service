@@ -38,4 +38,11 @@ mv src/main/resources/db/migration/V2__load-test-data.sql1 src/main/resources/db
 ```
 **CAUTION**: _this will cause test failures because of populating data to db_. 
 
+Also you can run [run.sh](run.sh) script to locally run only stock-service, but in this case you have to specify environment variables for db connection: 
+ ```sh 
+ $DB_URL
+ $DB_USERNAME
+ $DB_PASSWORD
+ ```
+
 Finally just open [http://localhost:8080](http://localhost:8080)  

@@ -3,7 +3,7 @@ version: '3'
 services:
 
   stock-service:
-    image: otodosov/stock-service:1876d7e9
+    image: otodosov/stock-service:92d7e5e6
     container_name: stock-service
     ports:
       - 8080:8080
