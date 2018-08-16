@@ -46,7 +46,7 @@ class Create extends Component {
                             </div>
                             <div class="form-group">
                                 <label for="currentPrice">Current Price:</label>
-                                <input type="number" class="form-control" name="currentPrice" value={currentPrice} onChange={this.onChange} placeholder="Address" />
+                                <input type="number" class="form-control" name="currentPrice" value={currentPrice} onChange={this.onChange} placeholder="Current price" />
                             </div>
                             <button type="submit" class="btn btn-default">Submit</button>
                         </form>

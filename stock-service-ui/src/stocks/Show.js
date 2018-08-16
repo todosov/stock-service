@@ -48,7 +48,7 @@ class Show extends Component {
                         <dl>
                             <dt>Name:</dt>
                             <dd>{stock.name}</dd>
-                            <dt>Address:</dt>
+                            <dt>Current Price:</dt>
                             <dd>{stock.currentPrice}</dd>
                             <dt>Last Update:</dt>
                             <dd>{stock.lastUpdate}</dd>
