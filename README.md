@@ -21,7 +21,7 @@ In tests h2 db is used instead of postgres db.
 # Build and Release process
 
 Current git repository integrates with aws CodePipeline. In scope of build pipeline aws CodeBuild launches and build application.
-CodeBuild steps are described in [buildspec.yml]. It builds ui subproject, containerizes application, tag it with first 8 chars of hash commit and publish image to [docker hub](https://hub.docker.com/r/otodosov/stock-service/).
+CodeBuild steps are described in [buildspec.yml](buildspec.yml). It builds ui subproject, containerizes application, tag it with first 8 chars of hash commit and publish image to [docker hub](https://hub.docker.com/r/otodosov/stock-service/).
 
 # How to run
 
